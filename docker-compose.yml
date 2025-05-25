@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_DB: currency_exchange_db
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - currency_exchange_postgres:/var/lib/postgresql/data
+
+volumes:
+  currency_exchange_postgres:
